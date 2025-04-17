@@ -1,0 +1,139 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+.main {
+  font-family: "Cambria, Cochin", "Georgia", "Times", "Times New Roman", "serif";
+}
+.background {
+  background-color: #dedede;
+}
+.brand-nav {
+  display: flex;
+}
+.brand-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin: 4px 2px 0px 2px;
+}
+.brand-menu span {
+  width: 13px;
+  background-color: rgb(243, 115, 10);
+  height: 2px;
+}
+.navbar {
+  display: flex;
+  justify-content: space-evenly;
+}
+.brand-nav {
+  color: #a6a2a2;
+  letter-spacing: 4px;
+  font-size: large;
+  margin-top: 5px;
+}
+.currency {
+  background-color: rgb(243, 115, 10);
+  text-align: center;
+  color: #fff;
+  letter-spacing: 3px;
+  font-size: 10px;
+}
+.Tools {
+  display: flex;
+}
+.Tools div {
+  margin-right: 20px;
+  padding-top: 10px;
+}
+.Tools button {
+  background-color: rgb(243, 115, 10);
+  border: none;
+  padding: 0px 15px;
+  border-radius: 10px;
+}
+.image-container {
+  margin-top: 10px;
+  background-image: url("/images/Untitled design (1).png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 400px;
+  width: 100%;
+}
+.converter-section {
+  color: #f00;
+  padding: 15px 30px;
+}
+.converter-section p {
+  font-size: 13px;
+}
+.input-field {
+  height: 30px;
+  padding: 0px 10px;
+  border: none;
+  border-top-left-radius: 6px;
+  border-bottom-left-radius: 6px;
+  border-right: 1px solid rgb(243, 115, 10);
+  margin-right: 10px;
+}
+.input-flex2 {
+  height: 30px;
+  padding: 0px 10px;
+  border: none;
+  border-top-right-radius: 6px;
+  border-bottom-right-radius: 6px;
+}
+.input-sec1 {
+  background-color: #fff;
+  width: fit-content;
+  padding-bottom: 5px;
+  padding-top: 15px;
+  margin-top: 15px;
+  border-radius: 15px;
+  display: flex;
+}
+.input-sec img {
+  width: 20px;
+}
+.input-sec2 {
+  display: flex;
+  background-color: #fff;
+  width: fit-content;
+  padding-bottom: 5px;
+  padding-top: 15px;
+  margin-top: 15px;
+  border-radius: 15px;
+}
+
+@media (min-width: 500px) {
+  .grid-input-field {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    gap: 15px;
+  }
+}
+.currency-logo {
+  width: 30px;
+  height: 30px;
+}
+.grid-input-field {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.convert-button {
+  text-align: center;
+  padding-top: 30px;
+}
+.convert-btn {
+  padding: 10px 15px;
+  border-radius: 10px;
+  background-color: rgb(243, 115, 10);
+  border: 1px solid #fff;
+  color: #fff;
+}
+.convert-btn:hover {
+  background-color: rgba(168, 81, 9, 0.5);
+}

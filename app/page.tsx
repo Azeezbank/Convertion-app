@@ -24,7 +24,7 @@ export default function Home() {
       const data = await response.json();
       console.log("result", code, code2, amountToconvert);
       setConversionRate(data.conversion_result);
-    } catch (err: any) {
+    } catch (err) {
       console.error("Error converting data", err);
     }
   };

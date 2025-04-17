@@ -11,7 +11,7 @@ export default function Home() {
   const [conversionRate, setConversionRate] = useState("");
 
   //Fetch convertion rate
-  const handleRate = async (e: React.MouseEvent<HTMLInputElement>) => {
+  const handleRate = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     try {
       const response = await fetch("/api/conversion_rate", {

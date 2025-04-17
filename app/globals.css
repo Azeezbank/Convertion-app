@@ -43,6 +43,16 @@
 .Tools {
   display: flex;
 }
+@media (max-width: 760) {
+  .Tools {
+    display: none
+  }
+  .grid-input-field {
+    display: grid;
+    grid-template-columns: auto;
+    gap: 15px;
+  }
+}
 .Tools div {
   margin-right: 20px;
   padding-top: 10px;

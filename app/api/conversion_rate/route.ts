@@ -10,6 +10,6 @@ export async function POST(request: NextRequest) {
         console.log('back', data)
         return NextResponse.json(data);
     } catch (err) {
-        console.error({error: 'Error converting data'}, {status: 500})
+        console.error({error: 'Error converting data', err}, {status: 500})
     }
 };

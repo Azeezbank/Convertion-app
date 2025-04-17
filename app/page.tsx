@@ -1,17 +1,7 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
-interface logo {
-  logo: string;
-}
-interface country {
-  code: string;
-  cca2: string;
-}
 
-interface rate {
-  conversion_rate: number;
-}
 export default function Home() {
   const [code, setCode] = useState("");
   const [code2, setCode2] = useState("");
@@ -21,7 +11,7 @@ export default function Home() {
   const [conversionRate, setConversionRate] = useState("");
 
   //Fetch convertion rate
-  const handleRate = async (e: any) => {
+  const handleRate = async (e: unknown) => {
     e.preventDefault();
     try {
       const response = await fetch("/api/conversion_rate", {
@@ -34,13 +24,13 @@ export default function Home() {
       const data = await response.json();
       console.log("result", code, code2, amountToconvert);
       setConversionRate(data.conversion_result);
-    } catch (err: any) {
+    } catch (err: unknown) {
       console.error("Error converting data", err);
     }
   };
 
   // handle code
-  const handleCode = (e: any) => {
+  const handleCode = (e: ) => {
     const codeValue = e.target.value;
     const codeLoweer = codeValue.toLowerCase();
     const codeValue2 = e.target.options[e.target.selectedIndex].text;

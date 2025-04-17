@@ -11,7 +11,7 @@ export default function Home() {
   const [conversionRate, setConversionRate] = useState("");
 
   //Fetch convertion rate
-  const handleRate = async (e: unknown) => {
+  const handleRate = async (e: React.MouseEvent<HTMLInputElement>) => {
     e.preventDefault();
     try {
       const response = await fetch("/api/conversion_rate", {
@@ -24,13 +24,13 @@ export default function Home() {
       const data = await response.json();
       console.log("result", code, code2, amountToconvert);
       setConversionRate(data.conversion_result);
-    } catch (err: unknown) {
+    } catch (err: any) {
       console.error("Error converting data", err);
     }
   };
 
   // handle code
-  const handleCode = (e: ) => {
+  const handleCode = (e: React.ChangeEvent<HTMLSelectElement>) => {
     const codeValue = e.target.value;
     const codeLoweer = codeValue.toLowerCase();
     const codeValue2 = e.target.options[e.target.selectedIndex].text;
@@ -39,7 +39,7 @@ export default function Home() {
     setCode11(codeLoweer2);
   };
 
-  const handleCode2 = (e: any) => {
+  const handleCode2 = (e: React.ChangeEvent<HTMLSelectElement>) => {
     const codeValue = e.target.value;
     const codeLoweer = codeValue.toLowerCase();
     const codeValue2 = e.target.options[e.target.selectedIndex].text;

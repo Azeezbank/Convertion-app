@@ -9,8 +9,10 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@popperjs/core": "^2.11.8",
     "@prisma/client": "^6.5.0",
     "axios": "^1.8.4",
+    "bootstrap": "^5.3.5",
     "bootstrap-icons": "^1.11.3",
     "express": "^4.21.2",
     "next": "15.2.4",

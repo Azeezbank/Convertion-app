@@ -1,11 +1,11 @@
 "use client";
 import { useActionState, useState } from "react";
-
+import Image from "next/image";
 
 interface Rate {
-  time_last_update_utc: string
-  time_next_update_utc: string
-  conversion_result: string
+  time_last_update_utc: string;
+  time_next_update_utc: string;
+  conversion_result: string;
 }
 export default function Home() {
   const [code, setCode] = useState("");
@@ -14,9 +14,9 @@ export default function Home() {
   const [code22, setCode22] = useState("");
   const [amountToconvert, setAmountToConvert] = useState("");
   const [conversionRate, setConversionRate] = useState<Rate>({
-    time_last_update_utc: '',
-  time_next_update_utc: '',
-  conversion_result: ''
+    time_last_update_utc: "",
+    time_next_update_utc: "",
+    conversion_result: "",
   });
   // const [conversionResult, setConversionResult] = useState(0);
 
@@ -37,7 +37,6 @@ export default function Home() {
       console.error("Error converting data", err);
     }
   };
-
 
   // handle code
   const handleCode = (e: React.ChangeEvent<HTMLSelectElement>) => {
@@ -131,99 +130,147 @@ export default function Home() {
       </nav>
 
       <div className="image-container">
-        <div className="converter-section">
-          <h3>Various Currency converter</h3>
-          <p>Convert Different Currency</p>
-          <p>1 NGN = USD ?</p>
-          <div className="grid-input-fields">
-            <div className="input-sec1">
-              <input
-                className="input-field outline"
-                type="number"
-                placeholder="Amount"
-                value={amountToconvert}
-                onChange={(e) => setAmountToConvert(e.target.value)}
-              />
-              <img
-                src={`https://flagcdn.com/w80/${code}.png`}
-                alt="flag"
-                className="currency-logo"
-              />
-              <select
-                aria-label="select"
-                className="input-flex2 outline"
-                onChange={handleCode}
-              >
-                {countryCode.map((cD) => (
-                  <> 
-                    {Object.entries(cD).map(([key, value]) => (
-                      <option key={key} value={key}>
-                        {value}
-                      </option>
-                    ))}
-                  </>
-                ))}
-              </select>
+        <div>
+          <div className="converter-section">
+            <h3>Various Currency converter</h3>
+            <p>Convert Different Currency</p>
+            <p>1 NGN = USD ?</p>
+            <div className="grid-input-fields">
+              <div className="input-sec1">
+                <input
+                  className="input-field outline"
+                  type="number"
+                  placeholder="Amount"
+                  value={amountToconvert}
+                  onChange={(e) => setAmountToConvert(e.target.value)}
+                />
+                <img
+                  src={`https://flagcdn.com/w80/${code}.png`}
+                  alt="flag"
+                  className="currency-logo"
+                />
+                <select
+                  aria-label="select"
+                  className="input-flex2 outline"
+                  onChange={handleCode}
+                >
+                  {countryCode.map((cD) => (
+                    <>
+                      {Object.entries(cD).map(([key, value]) => (
+                        <option key={key} value={key}>
+                          {value}
+                        </option>
+                      ))}
+                    </>
+                  ))}
+                </select>
+              </div>
+              <div className="arrow">
+                <h1>
+                  <i className="bi bi-arrow-left-right"></i>{" "}
+                </h1>
+              </div>
+              <div className="arrow2">
+                <h1>
+                  <i className="bi bi-arrow-down-up"></i>{" "}
+                </h1>
+              </div>
+              <div className="input-sec2">
+                <input
+                  className="input-field outline"
+                  type="number"
+                  placeholder="Amount"
+                  defaultValue={conversionRate.conversion_result}
+                  // onChange={(e) => setConversionResult(Number(e.target.value))}
+                />
+                <img
+                  src={`https://flagcdn.com/w80/${code2}.png`}
+                  alt="flag2"
+                  className="currency-logo"
+                />
+                <select
+                  aria-label="select"
+                  className="input-flex2 outline"
+                  onChange={handleCode2}
+                >
+                  {countryCode.map((value, index) => (
+                    <>
+                      {Object.entries(value).map(([key, value]) => (
+                        <option key={`${key}-${index}`} value={key}>
+                          {value}
+                        </option>
+                      ))}
+                    </>
+                  ))}
+                </select>
+              </div>
             </div>
-            <div className="arrow">
-              <h1>
-                <i className="bi bi-arrow-left-right"></i>{" "}
-              </h1>
-            </div>
-            <div className="arrow2">
-              <h1>
-                <i className="bi bi-arrow-down-up"></i>{" "}
-              </h1>
-            </div>
-            <div className="input-sec2">
-              <input
-                className="input-field outline"
-                type="number"
-                placeholder="Amount"
-                defaultValue={conversionRate.conversion_result}
-                // onChange={(e) => setConversionResult(Number(e.target.value))}
-              />
-              <img
-                src={`https://flagcdn.com/w80/${code2}.png`}
-                alt="flag2"
-                className="currency-logo"
-              />
-              <select
-                aria-label="select"
-                className="input-flex2 outline"
-                onChange={handleCode2}
-              >
-                {countryCode.map((value, index) => (
-                  <>
-                    {Object.entries(value).map(([key, value]) => (
-                      <option key={`${key}-${index}`} value={key}>
-                        {value}
-                      </option>
-                    ))}
-                  </>
-                ))}
-              </select>
-            </div>
-          </div>
 
-          <div className="flex-date">
-            <div>
-          <h6 className="mid-market">Mid-market last exchange rate update at UTC</h6>
-          <div className="calendar">
-          <span className="calendar-date">{conversionRate.time_last_update_utc}</span><span> <i className="bi bi-calendar"></i></span>
+            <div className="flex-date">
+              <div>
+                <h6 className="mid-market">
+                  Mid-market last exchange rate update at UTC
+                </h6>
+                <div className="calendar">
+                  <span className="calendar-date">
+                    {conversionRate.time_last_update_utc}
+                  </span>
+                  <span>
+                    {" "}
+                    <i className="bi bi-calendar"></i>
+                  </span>
+                </div>
+              </div>
+              <div>
+                <h6 className="mid-market">
+                  Mid-market next exchange rate update at UTC
+                </h6>
+                <div className="calendar">
+                  <span className="calendar-date">
+                    {conversionRate.time_next_update_utc}
+                  </span>
+                  <span>
+                    {" "}
+                    <i className="bi bi-calendar"></i>
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div className="convert-button">
+              <button
+                className="convert-btn"
+                type="button"
+                onClick={handleRate}
+              >
+                Convert
+              </button>
+            </div>
           </div>
-          </div>
-          <div>
-          <h6 className="mid-market">Mid-market next exchange rate update at UTC</h6>
-          <div className="calendar">
-          <span className="calendar-date">{conversionRate.time_next_update_utc}</span><span> <i className="bi bi-calendar"></i></span>
-          </div>
-          </div>
-          </div>
-          <div className="convert-button">
-            <button className="convert-btn" type="button" onClick={handleRate}>
-              Convert
-            </button>
+          <div className="second-section">
+            <div className="demo-header">
+              <h5>Demo, Convert BRl to KRW</h5>
+              <div className="d-flex justify-content-around">
+                <div className="d-flex gap-s">
+                  <img
+                    src="https://flagcdn.com/w80/br.png"
+                    alt="brazil"
+                    className="demo-image"
+                  />
+                  <p>BRL</p>
+                </div>
+                <div className="d-flex">
+                  <img
+                    src="https://flagcdn.com/w80/br.png"
+                    alt="brazil"
+                    className="demo-image"
+                  />
+                  <p>BRL</p>
+                </div>
+              </div>
+            </div>
+            <div className="d-flex">
+              <p>1 brl</p> <p>0.9kwr</p>
+            </div>
           </div>
         </div>
       </div>

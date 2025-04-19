@@ -1,17 +1,27 @@
 "use client";
-import { useState } from "react";
+import { useActionState, useState } from "react";
 
 
+interface Rate {
+  time_last_update_utc: string
+  time_next_update_utc: string
+  conversion_result: string
+}
 export default function Home() {
   const [code, setCode] = useState("");
   const [code2, setCode2] = useState("");
   const [code11, setCode11] = useState("");
   const [code22, setCode22] = useState("");
   const [amountToconvert, setAmountToConvert] = useState("");
-  const [conversionRate, setConversionRate] = useState("");
+  const [conversionRate, setConversionRate] = useState<Rate>({
+    time_last_update_utc: '',
+  time_next_update_utc: '',
+  conversion_result: ''
+  });
+  // const [conversionResult, setConversionResult] = useState(0);
 
   //Fetch convertion rate
-  const handleRate = async (e: React.MouseEvent<HTMLInputElement>) => {
+  const handleRate = async (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
     try {
       const response = await fetch("/api/conversion_rate", {
@@ -22,12 +32,12 @@ export default function Home() {
         body: JSON.stringify({ code11, code22, amountToconvert }),
       });
       const data = await response.json();
-      console.log("result", code, code2, amountToconvert);
-      setConversionRate(data.conversion_result);
-    } catch (err: any) {
+      setConversionRate(data);
+    } catch (err) {
       console.error("Error converting data", err);
     }
   };
+
 
   // handle code
   const handleCode = (e: React.ChangeEvent<HTMLSelectElement>) => {
@@ -109,7 +119,7 @@ export default function Home() {
           </div>
           <p className="currency">Currency Converter</p>
         </div>
-        <div className="Tools">
+        <div className="Tools toolsExchane">
           <div>Tools</div>
           <div>Exchange Rate API</div>
           <div>Resources</div>
@@ -119,15 +129,16 @@ export default function Home() {
           <button type="button">Register</button>
         </div>
       </nav>
+
       <div className="image-container">
         <div className="converter-section">
           <h3>Various Currency converter</h3>
           <p>Convert Different Currency</p>
           <p>1 NGN = USD ?</p>
-          <div className="grid-input-field">
+          <div className="grid-input-fields">
             <div className="input-sec1">
               <input
-                className="input-field"
+                className="input-field outline"
                 type="number"
                 placeholder="Amount"
                 value={amountToconvert}
@@ -140,11 +151,11 @@ export default function Home() {
               />
               <select
                 aria-label="select"
-                className="input-flex2"
+                className="input-flex2 outline"
                 onChange={handleCode}
               >
                 {countryCode.map((cD) => (
-                  <>
+                  <> 
                     {Object.entries(cD).map(([key, value]) => (
                       <option key={key} value={key}>
                         {value}
@@ -154,18 +165,23 @@ export default function Home() {
                 ))}
               </select>
             </div>
-            <div>
+            <div className="arrow">
               <h1>
                 <i className="bi bi-arrow-left-right"></i>{" "}
               </h1>
             </div>
-            <div className="input-sec input-sec2">
+            <div className="arrow2">
+              <h1>
+                <i className="bi bi-arrow-down-up"></i>{" "}
+              </h1>
+            </div>
+            <div className="input-sec2">
               <input
-                className="input-field"
+                className="input-field outline"
                 type="number"
                 placeholder="Amount"
-                value={conversionRate}
-                onChange={(e) => setConversionRate(e.target.value)}
+                defaultValue={conversionRate.conversion_result}
+                // onChange={(e) => setConversionResult(Number(e.target.value))}
               />
               <img
                 src={`https://flagcdn.com/w80/${code2}.png`}
@@ -174,7 +190,7 @@ export default function Home() {
               />
               <select
                 aria-label="select"
-                className="input-flex2"
+                className="input-flex2 outline"
                 onChange={handleCode2}
               >
                 {countryCode.map((value, index) => (
@@ -188,6 +204,21 @@ export default function Home() {
                 ))}
               </select>
             </div>
+          </div>
+
+          <div className="flex-date">
+            <div>
+          <h6 className="mid-market">Mid-market last exchange rate update at UTC</h6>
+          <div className="calendar">
+          <span className="calendar-date">{conversionRate.time_last_update_utc}</span><span> <i className="bi bi-calendar"></i></span>
+          </div>
+          </div>
+          <div>
+          <h6 className="mid-market">Mid-market next exchange rate update at UTC</h6>
+          <div className="calendar">
+          <span className="calendar-date">{conversionRate.time_next_update_utc}</span><span> <i className="bi bi-calendar"></i></span>
+          </div>
+          </div>
           </div>
           <div className="convert-button">
             <button className="convert-btn" type="button" onClick={handleRate}>

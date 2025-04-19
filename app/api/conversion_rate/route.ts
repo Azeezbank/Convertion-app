@@ -7,7 +7,6 @@ export async function POST(request: NextRequest) {
     try {
         const response = await fetch(`https://v6.exchangerate-api.com/v6/d05aa0dd619354a79346ef1b/pair/${code11}/${code22}/${amountToconvert}`)
         const data = await response.json();
-        console.log('back', data)
         return NextResponse.json(data);
     } catch (err) {
         console.error({error: 'Error converting data', err}, {status: 500})

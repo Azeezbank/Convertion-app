@@ -1,6 +1,5 @@
 "use client";
-import { useActionState, useState } from "react";
-import Image from "next/image";
+import { useState } from "react";
 
 interface Rate {
   time_last_update_utc: string;

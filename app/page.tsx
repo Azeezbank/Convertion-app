@@ -245,32 +245,44 @@ export default function Home() {
               </button>
             </div>
           </div>
-          <div className="second-section">
-            <div className="demo-header">
-              <h5>Demo, Convert BRl to KRW</h5>
-              <div className="d-flex justify-content-around">
-                <div className="d-flex gap-s">
-                  <img
-                    src="https://flagcdn.com/w80/br.png"
-                    alt="brazil"
-                    className="demo-image"
-                  />
-                  <p>BRL</p>
-                </div>
-                <div className="d-flex">
-                  <img
-                    src="https://flagcdn.com/w80/br.png"
-                    alt="brazil"
-                    className="demo-image"
-                  />
-                  <p>BRL</p>
+            <div className="second-section">
+              <div className="demo-header">
+                <h5>Demo, Convert BRl to KRW</h5>
+                <div className="d-flex justify-content-around">
+                  <div className="d-flex">
+                    <img
+                      src="https://flagcdn.com/w80/br.png"
+                      alt="brazil"
+                      className="demo-image"
+                    />
+                    <p>BRL</p>
+                  </div>
+                  <div className="d-flex">
+                    <img
+                      src="https://flagcdn.com/w80/kr.png"
+                      alt="brazil"
+                      className="demo-image"
+                    />
+                    <p>KWR</p>
+                  </div>
                 </div>
               </div>
+              <div className="grid-conversion">
+                <p>1 BRL</p> <p>0242.3 KWR</p>
+                <p>2 BRL</p> <p>484.78 KWR</p>
+                <p>3 BRL</p> <p>727.17 KWR</p>
+                <p>4 BRL</p> <p>969.56 KWR</p>
+                <p>5 BRL</p> <p>1211.95 KWR</p>
+                <p>6 BRL</p> <p>1454.34 KWR</p>
+                <p>7 BRL</p> <p>1696.73 KWR</p>
+                <p>8 BRL</p> <p>1939.12 KWR</p>
+              </div>
             </div>
-            <div className="d-flex">
-              <p>1 brl</p> <p>0.9kwr</p>
-            </div>
-          </div>
+        </div>
+
+        <div>
+        <h4>Currency Information</h4>
+        <img src="https://flagcdn.com/w80/kr.png" alt="flag" className="demo-image" />
         </div>
       </div>
     </div>

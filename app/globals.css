@@ -4,7 +4,7 @@
   box-sizing: border-box;
 }
 .main {
-  font-family: "Cambria, Cochin", "Georgia", "Times", "Times New Roman", "serif";
+  font-family: "Cambria", "Cochin", "Georgia", "Times", "Times New Roman", "serif";
 }
 .background {
   background-color: #dedede;
@@ -42,6 +42,16 @@
 }
 .Tools {
   display: flex;
+}
+@media (max-width: 760) {
+  .Tools {
+    display: none
+  }
+  .grid-input-field {
+    display: grid;
+    grid-template-columns: auto;
+    gap: 15px;
+  }
 }
 .Tools div {
   margin-right: 20px;

@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 /* .page {
+=======
+/*.page {
+>>>>>>> 0747c33bc051ff32e9520e60ed8b7552b8c887a9
   --gray-rgb: 0, 0, 0;
   --gray-alpha-200: rgba(var(--gray-rgb), 0.08);
   --gray-alpha-100: rgba(var(--gray-rgb), 0.05);
@@ -165,4 +169,8 @@ a.secondary {
   .logo {
     filter: invert();
   }
+<<<<<<< HEAD
 } */
+=======
+}*/
+>>>>>>> 0747c33bc051ff32e9520e60ed8b7552b8c887a9

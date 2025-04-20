@@ -376,17 +376,20 @@ export default function Home() {
               type="text"
               aria-label="name"
               placeholder="Input Your Name"
+              required
             />
             <input
               type="email"
               aria-label="gmail"
               placeholder="Input Your Gmail Address"
+              required
             />
           </div>
           <textarea
             aria-label="comment"
             placeholder="Input Your Comment Content Here"
             rows={5}
+            required
           ></textarea>
           <div className="commit-button">
           {isSubmit ? (

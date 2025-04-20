@@ -1,5 +1,6 @@
 "use client";
-import { useState } from "react";
+import React, { useState } from "react";
+import { Toaster, toast } from "react-hot-toast";
 
 interface Rate {
   time_last_update_utc: string;
@@ -17,6 +18,7 @@ export default function Home() {
     time_next_update_utc: "",
     conversion_result: "",
   });
+  const [isSubmit, setIsSubmit] = useState(false);
   // const [conversionResult, setConversionResult] = useState(0);
 
   //Fetch convertion rate
@@ -102,6 +104,43 @@ export default function Home() {
     },
   ];
 
+  // Submit comment
+  const handleComment = async (e: React.MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault();
+    try {
+      const response = await fetch(
+        "https://backend-i9tl.onrender.com/api/v1/sumbmit-comment",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
+      setIsSubmit(true);
+      if (response.status === 200) {
+        console.log("Comment inserted successfully");
+        setIsSubmit(false);
+      }
+    } catch (err) {
+      console.error("Error inserting comment");
+    }
+  };
+
+  // Toaster
+  const notify = () => {
+    toast.success(
+      "Feature is coming up \n stay tune and drop your comments to us for improvement",
+      {
+        style: {
+          backgroundColor: "#084879",
+          color: "#fff",
+        },
+        icon: "✅",
+      }
+    );
+  };
+
   return (
     <div className="main">
       <nav className="navbar">
@@ -118,13 +157,19 @@ export default function Home() {
           <p className="currency">Currency Converter</p>
         </div>
         <div className="Tools toolsExchane">
-          <div>Tools</div>
-          <div>Exchange Rate API</div>
-          <div>Resources</div>
+          <div onClick={notify}>Weather Checking</div>
+          <Toaster position="top-center" />
+          <div onClick={notify}>Tenperature Converter</div>{" "}
+          <Toaster position="top-center" />
+          <div>Time Converter</div>
         </div>
         <div className="Tools">
-          <div>Sign In</div>
-          <button type="button">Register</button>
+          <div onClick={notify}>Sign In</div>
+          <Toaster position="top-center" />
+          <button type="button" onClick={notify}>
+            Register
+          </button>{" "}
+          <Toaster position="top-center" />
         </div>
       </nav>
 
@@ -317,7 +362,41 @@ export default function Home() {
             </div>
           </div>
         </div>
-        {/* </div> */}
+
+        <div className="form-field">
+          <h4 className="text-white pt-3">Comment section</h4>
+          <p>
+            Please leave your comment for us, we need this for improvement, what
+            to add, remove, the app is usefull or not. <br />
+            Please note your infomation are well emcrypt. Thanks
+          </p>
+          <div className="gridcomment">
+            <input
+              type="text"
+              aria-label="name"
+              placeholder="Input Your Name"
+            />
+            <input
+              type="email"
+              aria-label="gmail"
+              placeholder="Input Your Gmail Address"
+            />
+          </div>
+          <textarea
+            aria-label="comment"
+            placeholder="Input Your Comment Content Here"
+            rows={5}
+          ></textarea>
+          <div className="commit-button">
+          {isSubmit && (
+          <p>Submiting, Please Wait...</p>
+          )}
+            <button type="submit" onClick={handleComment}>
+              Submit
+            </button>
+          </div>
+        </div>
+
         <footer>
           <div>
             <div>
@@ -332,23 +411,23 @@ export default function Home() {
               </div>
               <p className="footer-currency">Currency Converter</p>
             </div>
-            <h4 className="text-white pt-2">Tools</h4>
-            <p className="text-white footer-text">Currency Converter</p>
-            <p className="text-white footer-text">Historical Currency Rates</p>
-            <p className="text-white footer-text">Historical Currency Rates</p>
-            <p className="text-white footer-text">Rate Alert</p>
+            <h4 className="text-white pt-2 foot-h">Tools</h4>
+            <p className="text-white footer-text foot-p">Currency Converter</p>
+            <p className="text-white footer-text foot-p">Historical Currency Rates</p>
+            <p className="text-white footer-text foot-pfoot-p">Historical Currency Rates</p>
+            <p className="text-white footer-text foot-p">Rate Alert</p>
           </div>
           <div className="mt-5 text-white footer-text">
-            <h4>Exchange Rate API</h4>
-            <p className="footer-text">Exchange Rate API</p>
-            <p className="footer-text">Free Trial</p>
-            <p className="footer-text">Pricing</p>
-            <p className="footer-text">Developers</p>
+            <h4 className="foot-h">Exchange Rate API</h4>
+            <p className="footer-text foot-p">Exchange Rate API</p>
+            <p className="footer-text foot-p">Free Trial</p>
+            <p className="footer-text foot-p">Pricing</p>
+            <p className="footer-text foot-p">Developers</p>
           </div>
           <div className="mt-5 text-white">
-            <h4>About Me</h4>
-            <i className="bi bi-whatsapp me-3"></i>
-            <i className="bi bi-facebook"></i>
+            <h4 className="foot-h">About Me</h4>
+            <i className="bi bi-whatsapp me-3 foot-p"></i>
+            <i className="bi bi-facebook foot-p" ></i>
           </div>
         </footer>
       </div>

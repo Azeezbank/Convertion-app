@@ -121,10 +121,9 @@ export default function Home() {
           body: JSON.stringify({name, gmail, comment})
         }
       );
-      setIsSubmit(true);
       if (response.status === 200) {
         console.log("Comment inserted successfully");
-        setIsSubmit(false);
+        setIsSubmit(true);
       }
     } catch (err) {
       console.error("Error inserting comment", err);

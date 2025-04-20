@@ -353,7 +353,7 @@ export default function Home() {
                   alt="flag"
                   className="demo-image"
                 />
-                <h5>BRL</h5>
+                <h5>KWR</h5>
               </div>
               <p>
                 The South Korean Won (kwr) is the official currency of South

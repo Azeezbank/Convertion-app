@@ -388,9 +388,9 @@ export default function Home() {
             rows={5}
           ></textarea>
           <div className="commit-button">
-          {isSubmit && (
-          <p>Submiting, Please Wait...</p>
-          )}
+          {isSubmit ? (
+          <p>Comment Submited. Thanks</p>
+          ) : (' ')}
             <button type="submit" onClick={handleComment}>
               Submit
             </button>

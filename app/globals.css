@@ -261,6 +261,7 @@ footer {
 }
 .commit-button {
   display: flex;
+  gap: 10px;
   justify-content: end;
 }
 .commit-button button {

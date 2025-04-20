@@ -163,6 +163,9 @@ padding-right: 5px;
   grid-template-columns: auto auto;
   text-align: center;
 }
+.input-field {
+  outline: none;
+}
 .input-sec1 {
   display: flex;
   align-items: center;

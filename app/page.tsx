@@ -411,10 +411,9 @@ export default function Home() {
               </div>
               <p className="footer-currency">Currency Converter</p>
             </div>
-            <h4 className="text-white pt-2 foot-h">Tools</h4>
+            <h4 className="text-white  foot-h fs-3">Tools</h4>
             <p className="text-white footer-text foot-p">Currency Converter</p>
             <p className="text-white footer-text foot-p">Historical Currency Rates</p>
-            <p className="text-white footer-text foot-pfoot-p">Historical Currency Rates</p>
             <p className="text-white footer-text foot-p">Rate Alert</p>
           </div>
           <div className="mt-5 text-white footer-text">

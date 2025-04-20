@@ -304,7 +304,7 @@ footer {
   .foot-p {
     font-size: 10px;
   }
-  .input-field .input-select {
+  .input-field, .input-select {
     width: 100%;
   }
   }

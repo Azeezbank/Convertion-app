@@ -311,12 +311,46 @@ export default function Home() {
                 <h5>BRL</h5>
               </div>
               <p>
-                The South Korean Won (kwr) is the official currency of South Korean. The
-                symbol of the Brazilian Real is ₩.
+                The South Korean Won (kwr) is the official currency of South
+                Korean. The symbol of the Brazilian Real is ₩.
               </p>
             </div>
           </div>
         </div>
+        {/* </div> */}
+        <footer>
+          <div>
+            <div>
+              <div className="brand-footer">
+                BANKYT
+                <div className="footer-brand-menu">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </div>
+                CH <br />
+              </div>
+              <p className="footer-currency">Currency Converter</p>
+            </div>
+            <h4 className="text-white pt-2">Tools</h4>
+            <p className="text-white footer-text">Currency Converter</p>
+            <p className="text-white footer-text">Historical Currency Rates</p>
+            <p className="text-white footer-text">Historical Currency Rates</p>
+            <p className="text-white footer-text">Rate Alert</p>
+          </div>
+          <div className="mt-5 text-white footer-text">
+            <h4>Exchange Rate API</h4>
+            <p className="footer-text">Exchange Rate API</p>
+            <p className="footer-text">Free Trial</p>
+            <p className="footer-text">Pricing</p>
+            <p className="footer-text">Developers</p>
+          </div>
+          <div className="mt-5 text-white">
+            <h4>About Me</h4>
+            <i className="bi bi-whatsapp me-3"></i>
+            <i className="bi bi-facebook"></i>
+          </div>
+        </footer>
       </div>
     </div>
   );

@@ -204,6 +204,40 @@ padding-right: 5px;
 .input-field {
   border-right: 1px solid rgb(243, 115, 10);
 }
+footer {
+  background-color: #084879;
+  margin-top: 10px;
+  padding: 10px;
+  display: grid;
+  grid-template-columns: auto auto auto;
+}
+.brand-footer {
+  display: flex;
+}
+.footer-brand-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin: 4px 2px 0px 2px;
+  color: #eee4e4;
+}
+.footer-brand-menu span {
+  width: 13px;
+  background-color: rgb(243, 115, 10);
+  height: 2px;
+}
+.footer-currency {
+  background-color: rgb(243, 115, 10);
+  text-align: center;
+  color: #fff;
+  letter-spacing: 3px;
+  font-size: 10px;
+  width: 100px;
+  font-size: 5px;
+}
+.footer-text {
+  margin-bottom: 0px;
+}
 @media (max-width: 760px) {
   .grid-input-fields {
     display: flex;
@@ -246,13 +280,13 @@ padding-right: 5px;
       font-size: 12px;
     }
     .second-section {
-      margin: 0px 15%;
+      margin: 0px 10%;
     }
     .grid-currency-info-container {
       display: grid;
       grid-template-columns: 50% 50%;
       gap: 5px;
-      margin: 0px 12%;
+      margin: 0px 10%;
     }
     .grid-input-fields {
       display: grid;

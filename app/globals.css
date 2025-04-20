@@ -211,7 +211,7 @@ padding-right: 5px;
 footer {
   background-color: #084879;
   margin-top: 10px;
-  padding: 10px;
+  padding: 10px 10px 35px 10px;
   display: grid;
   grid-template-columns: auto auto auto;
 }

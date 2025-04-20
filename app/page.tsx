@@ -226,6 +226,7 @@ export default function Home() {
                   type="number"
                   placeholder="Amount"
                   defaultValue={conversionRate.conversion_result}
+                  disabled
                 />
                 <img
                   src={`https://flagcdn.com/w80/${code2}.png`}

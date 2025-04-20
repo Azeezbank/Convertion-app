@@ -19,7 +19,10 @@ export default function Home() {
     conversion_result: "",
   });
   const [isSubmit, setIsSubmit] = useState(false);
-  // const [conversionResult, setConversionResult] = useState(0);
+  const [name, setName] = useState('');
+  const [gmail, setGmail] = useState('');
+  const [comment, setComment] = useState('');
+
 
   //Fetch convertion rate
   const handleRate = async (e: React.MouseEvent<HTMLButtonElement>) => {
@@ -115,6 +118,7 @@ export default function Home() {
           headers: {
             "Content-Type": "application/json",
           },
+          body: JSON.stringify({name, gmail, comment})
         }
       );
       setIsSubmit(true);
@@ -376,12 +380,16 @@ export default function Home() {
               type="text"
               aria-label="name"
               placeholder="Input Your Name"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
               required
             />
             <input
               type="email"
               aria-label="gmail"
               placeholder="Input Your Gmail Address"
+              value={gmail}
+              onChange={(e) => setGmail(e.target.value)}
               required
             />
           </div>
@@ -390,6 +398,8 @@ export default function Home() {
             placeholder="Input Your Comment Content Here"
             rows={5}
             required
+            value={comment}
+            onChange={(e) => setComment(e.target.value)}
           ></textarea>
           <div className="commit-button">
           {isSubmit ? (

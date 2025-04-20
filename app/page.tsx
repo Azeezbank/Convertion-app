@@ -200,7 +200,7 @@ export default function Home() {
                 >
                   {countryCode.map((cD, index) => (
                     <>
-                      <option key={index}>~~~</option>
+                      <option key={index}>AUD</option>
                       {Object.entries(cD).map(([key, value]) => (
                         <option key={key} value={key}>
                           {value}
@@ -240,7 +240,7 @@ export default function Home() {
                 >
                   {countryCode.map((value, index) => (
                     <>
-                      <option key={index}>~~~</option>
+                      <option key={index}>AUD</option>
                       {Object.entries(value).map(([key, value]) => (
                         <option key={`${key}-${index}`} value={key}>
                           {value}

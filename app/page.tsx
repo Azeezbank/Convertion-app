@@ -123,7 +123,7 @@ export default function Home() {
         setIsSubmit(false);
       }
     } catch (err) {
-      console.error("Error inserting comment");
+      console.error("Error inserting comment", err);
     }
   };
 

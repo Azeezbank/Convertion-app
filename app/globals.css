@@ -305,9 +305,12 @@ footer {
   .foot-p {
     font-size: 10px;
   }
-  .input-field, .input-select {
+  .input-field {
     width: 100%;
   }
+  /* .input-select {
+
+  } */
   }
   @media (min-width: 760px) {
     .grid-input-fields {

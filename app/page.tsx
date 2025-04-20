@@ -137,7 +137,7 @@ export default function Home() {
             <div className="grid-input-fields">
               <div className="input-sec1">
                 <input
-                  className="input-field outline"
+                  className="input-field"
                   type="number"
                   placeholder="Amount"
                   value={amountToconvert}
@@ -150,11 +150,12 @@ export default function Home() {
                 />
                 <select
                   aria-label="select"
-                  className="input-flex2 outline"
+                  className="input-select outline"
                   onChange={handleCode}
                 >
-                  {countryCode.map((cD) => (
+                  {countryCode.map((cD, index) => (
                     <>
+                      <option key={index}>~~~</option>
                       {Object.entries(cD).map(([key, value]) => (
                         <option key={key} value={key}>
                           {value}
@@ -180,7 +181,6 @@ export default function Home() {
                   type="number"
                   placeholder="Amount"
                   defaultValue={conversionRate.conversion_result}
-                  // onChange={(e) => setConversionResult(Number(e.target.value))}
                 />
                 <img
                   src={`https://flagcdn.com/w80/${code2}.png`}
@@ -189,11 +189,12 @@ export default function Home() {
                 />
                 <select
                   aria-label="select"
-                  className="input-flex2 outline"
+                  className="input-select outline"
                   onChange={handleCode2}
                 >
                   {countryCode.map((value, index) => (
                     <>
+                      <option key={index}>~~~</option>
                       {Object.entries(value).map(([key, value]) => (
                         <option key={`${key}-${index}`} value={key}>
                           {value}
@@ -245,44 +246,76 @@ export default function Home() {
               </button>
             </div>
           </div>
-            <div className="second-section">
-              <div className="demo-header">
-                <h5>Demo, Convert BRl to KRW</h5>
-                <div className="d-flex justify-content-around">
-                  <div className="d-flex">
-                    <img
-                      src="https://flagcdn.com/w80/br.png"
-                      alt="brazil"
-                      className="demo-image"
-                    />
-                    <p>BRL</p>
-                  </div>
-                  <div className="d-flex">
-                    <img
-                      src="https://flagcdn.com/w80/kr.png"
-                      alt="brazil"
-                      className="demo-image"
-                    />
-                    <p>KWR</p>
-                  </div>
+          <div className="second-section">
+            <div className="demo-header">
+              <h5>
+                Demo, <br />
+                Convert BRl to KRW
+              </h5>
+              <div className="d-flex justify-content-around">
+                <div className="d-flex">
+                  <img
+                    src="https://flagcdn.com/w80/br.png"
+                    alt="brazil"
+                    className="demo-image"
+                  />
+                  <p>BRL</p>
+                </div>
+                <div className="d-flex">
+                  <img
+                    src="https://flagcdn.com/w80/kr.png"
+                    alt="brazil"
+                    className="demo-image"
+                  />
+                  <p>KWR</p>
                 </div>
               </div>
-              <div className="grid-conversion">
-                <p>1 BRL</p> <p>0242.3 KWR</p>
-                <p>2 BRL</p> <p>484.78 KWR</p>
-                <p>3 BRL</p> <p>727.17 KWR</p>
-                <p>4 BRL</p> <p>969.56 KWR</p>
-                <p>5 BRL</p> <p>1211.95 KWR</p>
-                <p>6 BRL</p> <p>1454.34 KWR</p>
-                <p>7 BRL</p> <p>1696.73 KWR</p>
-                <p>8 BRL</p> <p>1939.12 KWR</p>
-              </div>
             </div>
+            <div className="grid-conversion">
+              <p>1 BRL</p> <p>0242.3 KWR</p>
+              <p>2 BRL</p> <p>484.78 KWR</p>
+              <p>3 BRL</p> <p>727.17 KWR</p>
+              <p>4 BRL</p> <p>969.56 KWR</p>
+              <p>5 BRL</p> <p>1211.95 KWR</p>
+              <p>6 BRL</p> <p>1454.34 KWR</p>
+              <p>7 BRL</p> <p>1696.73 KWR</p>
+              <p>8 BRL</p> <p>1939.12 KWR</p>
+            </div>
+          </div>
         </div>
 
         <div>
-        <h4>Currency Information</h4>
-        <img src="https://flagcdn.com/w80/kr.png" alt="flag" className="demo-image" />
+          <h4 className="text-center mt-5">Currency Information</h4>
+          <div className="grid-currency-info-container">
+            <div className="currency-info-container">
+              <div className="d-flex gap-1">
+                <img
+                  src="https://flagcdn.com/w80/br.png"
+                  alt="flag"
+                  className="demo-image"
+                />
+                <h5>BRL</h5>
+              </div>
+              <p>
+                The Brailian Real (BRL) is the official currency of Brazil. The
+                symbol of the Brazilian Real is R$.
+              </p>
+            </div>
+            <div className="currency-info-container">
+              <div className="d-flex gap-1">
+                <img
+                  src="https://flagcdn.com/w80/kr.png"
+                  alt="flag"
+                  className="demo-image"
+                />
+                <h5>BRL</h5>
+              </div>
+              <p>
+                The South Korean Won (kwr) is the official currency of South Korean. The
+                symbol of the Brazilian Real is ₩.
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </div>

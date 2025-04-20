@@ -41,16 +41,13 @@
 .Tools {
   display: flex;
 }
-@media (max-width: 760) {
-  .Tools {
-    display: none
-  }
-  .grid-input-field {
-    display: grid;
-    grid-template-columns: auto;
-    gap: 15px;
-  }
+.currency-info-container {
+  background-color: #a6a2a2;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 0px 20px;
 }
+
 .Tools div {
   margin-right: 20px;
   padding-top: 10px;
@@ -82,46 +79,11 @@
 .converter-section p {
   font-size: 13px;
 }
-.input-field {
-  height: 30px;
-  padding: 0px 10px;
-  border: none;
-  border-top-left-radius: 6px;
-  border-bottom-left-radius: 6px;
-  border-right: 1px solid rgb(243, 115, 10);
-  margin-right: 10px;
-  width: 100%
-}
-.input-flex2 {
-  height: 30px;
-  padding: 0px 10px;
-  border: none;
-  border-top-right-radius: 6px;
-  border-bottom-right-radius: 6px;
-}
-.input-sec1 {
-  background-color: #fff;
-  width: fit-content;
-  padding: 5px 8px;
-  margin-top: 15px;
-  border-radius: 8px;
-  display: flex;
-}
-.arrow, .arrow2 {
-  margin-top: 20px;
-  color: black;
-}
+
 .input-sec img {
   width: 20px;
 }
-.input-sec2 {
-  display: flex;
-  background-color: #fff;
-  width: fit-content;
-  padding: 5px 8px;
-  margin-top: 15px;
-  border-radius: 8px;
-}
+
 .second-section {
   background-color: #eee4e4;
   margin: 0px 20px;
@@ -130,8 +92,7 @@
 }
 
 .currency-logo {
-  width: 30px;
-  height: 30px;
+  width: 25px;
   border-radius: 8px;
 }
 .grid-input-field {
@@ -199,20 +160,58 @@ padding-right: 5px;
   grid-template-columns: auto auto;
   text-align: center;
 }
+.input-sec1 {
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 2px 5px;
+}
+.input-sec2 {
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 2px 5px;
+}
+.input-sec1 input, select, .input-sec2 input, select {
+  border-left: none;
+  border-bottom: none;
+  border-top: none;
+  padding-right: 5px;
+  margin-right: 5px;
+}
+.outline {
+  border-right: none;
+}
+.arrow {
+  display: flex;
+  align-items: center;
+}
+.arrow h1 {
+  color: black;
+  font-size: 20px;
+}
+.arrow2 {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+}
+.arrow2 h1 {
+  color: black;
+  font-size: 20px;
+}
+.input-field {
+  border-right: 1px solid rgb(243, 115, 10);
+}
 @media (max-width: 760px) {
   .grid-input-fields {
     display: flex;
     flex-direction: column;
     align-items: center;
   }
-  .input-sec1, .input-sec2 {
-    width: 80%;
-  }
   .arrow {
     display: none;
-  }
-  .arrow2 {
-    font-size: 10px;
   }
   .toolsExchane {
     display: none;
@@ -222,6 +221,12 @@ padding-right: 5px;
   }
   .mid-market {
     font-size: 12px;
+  }
+  .converter-section h3 {
+    font-size: 18px;
+  }
+  .currency-info-container {
+    margin-top: 15px;
   }
   }
   @media (min-width: 760px) {
@@ -233,8 +238,9 @@ padding-right: 5px;
     .arrow2 {
       display: none;
     }
+    .arrow {font-size: 2px;}
     .converter-section {
-      margin: 0px 15%;
+      margin: 0px 10%;
     }
     .calendar-date {
       font-size: 12px;
@@ -242,4 +248,17 @@ padding-right: 5px;
     .second-section {
       margin: 0px 15%;
     }
-  }
+    .grid-currency-info-container {
+      display: grid;
+      grid-template-columns: 50% 50%;
+      gap: 5px;
+      margin: 0px 12%;
+    }
+    .grid-input-fields {
+      display: grid;
+      grid-template-columns: auto auto auto;
+    }
+    .grid-input-fields input {
+      width: 100%;
+    }
+}

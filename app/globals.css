@@ -277,7 +277,9 @@ footer {
   cursor: pointer;
   background-color: rgba(243, 115, 10, 0.4);
 }
-
+.calendar {
+  padding-left: 10px;
+}
 @media (max-width: 760px) {
   .grid-input-fields {
     display: flex;

@@ -266,7 +266,7 @@ export default function Home() {
                   </span>
                   <span>
                     {" "}
-                    <i className="bi bi-calendar"></i>
+                    <i className="bi bi-calendar2-week calendar"></i>
                   </span>
                 </div>
               </div>
@@ -280,7 +280,7 @@ export default function Home() {
                   </span>
                   <span>
                     {" "}
-                    <i className="bi bi-calendar"></i>
+                    <i className="bi bi-calendar2-week calendar"></i>
                   </span>
                 </div>
               </div>
